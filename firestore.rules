@@ -1,0 +1,48 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // User profile and all subcollections (goals, investments)
+    match /users/{userId} {
+      allow read, write: if request.auth != null
+                         && request.auth.uid == userId;
+      
+      // Goals subcollection
+      match /goals/{goalId} {
+        allow read, write: if request.auth != null
+                           && request.auth.uid == userId;
+      }
+      
+      // Investments subcollection
+      match /investments/{investmentId} {
+        allow read, write: if request.auth != null
+                           && request.auth.uid == userId;
+      }
+    }
+
+    // Transactions (owned by user)
+    // For list/create, we check request.resource.data.userId (incoming) or resource.data.userId (existing)
+    match /transactions/{docId} {
+      allow read, update, delete: if request.auth != null && resource.data.uid == request.auth.uid;
+      allow create: if request.auth != null && request.resource.data.uid == request.auth.uid;
+    }
+
+    // Alerts
+    match /alerts/{docId} {
+      allow read, update, delete: if request.auth != null && resource.data.userId == request.auth.uid;
+      allow create: if request.auth != null && request.resource.data.userId == request.auth.uid;
+    }
+
+    // Goals
+    match /goals/{docId} {
+      allow read, update, delete: if request.auth != null && resource.data.uid == request.auth.uid;
+      allow create: if request.auth != null && request.resource.data.uid == request.auth.uid;
+    }
+
+    // Investments
+    match /investments/{docId} {
+      allow read, update, delete: if request.auth != null && resource.data.uid == request.auth.uid;
+      allow create: if request.auth != null && request.resource.data.uid == request.auth.uid;
+    }
+  }
+}
