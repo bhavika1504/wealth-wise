@@ -1,109 +1,92 @@
-📊 My Financial Compass
+# 📊 WealthWise 
 
-A modern, responsive personal finance web application built using React, TypeScript, Vite, Tailwind CSS, and shadcn/ui.
-It helps users track spending, analyze financial behavior, and plan goals efficiently with a clean and intuitive interface.
+WealthWise is a modern, responsive personal finance web application designed to help users track spending, analyze financial behavior, and plan goals efficiently. Built with a robust React frontend and a FastAPI backend powered by AI insights.
 
-🚀 Project Overview
+## 🚀 Key Features
 
-My Financial Compass is designed to provide:
+-   **💰 Transaction Tracking**: Effortlessly record and categorize your daily expenses and income.
+-   **📈 Financial Insights**: Visualize your spending patterns with interactive charts and reports.
+-   **🎯 Goal Planning**: Set and monitor financial goals, from emergency funds to vacation savings.
+-   **🤖 AI-Powered Analysis**: Leverage FinGPT and Scikit-Learn models for personalized financial advice and market analysis.
+-   **✉️ Smart Alerts**: Receive email notifications for budget limits and important financial milestones.
+-   **🛡️ Secure Auth**: Robust authentication system powered by Firebase.
 
-📈 Clear financial insights
+## 🛠 Tech Stack
 
-🎯 Simple and effective goal planning
+### Frontend
+-   **Framework**: [React](https://reactjs.org/) (with TypeScript)
+-   **Build Tool**: [Vite](https://vitejs.dev/)
+-   **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+-   **UI Components**: [shadcn/ui](https://ui.shadcn.com/)
+-   **State Management**: React Hooks & Context API
+-   **Backend Intregration**: Axios
 
-🎨 Clean, user-friendly UI
+### Backend
+-   **Framework**: [FastAPI](https://fastapi.tiangolo.com/) (Python)
+-   **AI Engines**: FinGPT, Scikit-Learn, Google Gemini
+-   **Database**: Firebase Firestore
+-   **Authentication**: Firebase Auth
 
-⚡ Fast performance using modern frontend tooling
+## 💻 Getting Started
 
-The project focuses on usability, scalability, and visual clarity.
+### Prerequisites
+-   Node.js (v18+)
+-   Python (3.9+)
+-   Firebase Account
 
-🛠 Tech Stack
+### 🔧 Frontend Setup
+1.  **Clone the repository**:
+    ```bash
+    git clone <your-repository-url>
+    cd wealth-wise
+    ```
+2.  **Install dependencies**:
+    ```bash
+    npm install
+    ```
+3.  **Configure environment variables**:
+    -   Copy `.env.example` to `.env`.
+    -   Fill in your Firebase credentials and Backend URL.
+    ```bash
+    cp .env.example .env
+    ```
+4.  **Run the development server**:
+    ```bash
+    npm run dev
+    ```
 
-This project is built using the following technologies:
+### 🐍 Backend Setup
+1.  **Navigate to the backend directory**:
+    ```bash
+    cd backend
+    ```
+2.  **Install dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ```
+3.  **Configure environment variables**:
+    -   Copy `env.example` to `.env`.
+    -   Add your API keys (Gemini, Finnhub, etc.).
+4.  **Run the FastAPI server**:
+    ```bash
+    python main.py
+    ```
 
-Vite – Lightning-fast development environment
+## 📜 Available Scripts
 
-React – Component-based UI framework
+| Command | Description |
+| :--- | :--- |
+| `npm run dev` | Start frontend development server |
+| `npm run build` | Build frontend for production |
+| `npm run preview` | Preview production build |
+| `python backend/main.py` | Start backend API server |
 
-TypeScript – Static typing for better reliability
+## 🛡️ Security
 
-Tailwind CSS – Utility-first styling framework
+Environment variables are managed via `.env` files. Ensure that:
+-   `.env` is never committed to version control (already added to `.gitignore`).
+-   Template variables are kept updated in `.env.example`.
 
-shadcn/ui – Accessible and reusable UI components
+## 🏁 Conclusion
 
-💻 Project Setup (Run Locally)
-✅ Prerequisites
-
-Ensure you have the following installed:
-
-Node.js (v18 or later recommended)
-
-npm
-
-🔧 Installation & Run
-# Clone the repository
-git clone <YOUR_GIT_URL>
-
-# Navigate to the project directory
-cd <PROJECT_FOLDER_NAME>
-
-# Install dependencies
-npm install
-
-# Start the development server
-npm run dev
-
-
-The application will run at:
-
-http://localhost:5173
-
-📜 Available Scripts
-Command	Description
-npm install	Install project dependencies
-npm run dev	Start development server
-npm run build	Build for production
-npm run preview	Preview production build locally
-🌍 Deployment
-
-You can deploy this project using any modern frontend hosting platform such as:
-
-Vercel
-
-Netlify
-
-Cloudflare Pages
-
-GitHub Pages
-
-Build Command
-npm run build
-
-Output Directory
-dist/
-
-🎨 Customization
-
-You can customize the project easily:
-
-Update app title and favicon in index.html
-
-Modify UI components in src/components
-
-Adjust styles using tailwind.config.ts
-
-Extend features using React hooks and utilities
-
-📌 Future Enhancements (Optional)
-
-AI-powered financial insights
-
-Budget alerts and notifications
-
-Investment analysis modules
-
-Advanced financial forecasting
-
-🏁 Conclusion
-
-My Financial Compass aims to simplify personal finance management by combining clean UI, fast performance, and intelligent insights, making financial planning accessible for everyone.
+WealthWise aims to simplify personal finance management by combining a clean UI, fast performance, and intelligent AI-driven insights, making financial planning accessible for everyone.
